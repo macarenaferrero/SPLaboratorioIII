@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Concesionaria</title>
+</head>
+
+<body>
+    <header class="navegacion">
+        <img src="./images/LogoIn.png" height="150px" alt="logo-concesionaria">
+        <nav class="itemsNav">
+            <ul>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#home">Home</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#crearAnuncio">Crear Anuncio</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#divTabla">Ver Anuncios</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#nosotros">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <hr>
+        <div id="home" class="inicioPrincipal">
+            <h1>CONCESIONARIA</h1>
+            <img src="./images/bannerbronco.jpg" class="col-12" alt="Administración" id="imagenPrincipal">
+        </div>
+        <form action="" class="formulario">
+            <fieldset>
+                <legend id="crearAnuncio">Información del Anuncio</legend>
+
+                <h6>Titulo</h6>
+                <input class="col-md-11" type="text" class="longTextBox" name="titulo" placeholder="Titulo" id="titulo"
+                    autocomplete="off" required>
+
+                <h6>Transacion</h6>
+                <div>
+                    Venta <input type="radio" name="transaccion" value="venta" id="venta" autocomplete="off" checked>
+                </div>
+                <div>
+                    Alquiler <input type="radio" name="transaccion" value="alquiler" autocomplete="off" id="alquiler">
+                </div>
+                <h6>Descripcion</h6>
+                <input class="col-md-11" type="text" name="descripcion" placeholder="Descripcion" id="descripcion"
+                    autocomplete="off" required>
+
+                <h6>Precio</h6>
+                <input class="col-md-11" type="number" name="precio" step="0.01" placeholder="Precio" id="precio"
+                    autocomplete="off" required>
+                <h6>Numero de puertas</h6>
+                <div class="col-md-12">
+                    <img class="col-1" src="./images/puerta.png" width="70px" alt="puertas">
+                    <input class="col-10 p-0" type="number" name="puertas" placeholder="Puertas" id="puertas" autocomplete="off"
+                        required>
+                </div>
+                <h6>Km's</h6>
+                <div class="col-md-12">
+                    <img  src="./images/km.png"width="60px" alt="km">
+                    <input class="col-10" type="number" name="km" placeholder="Km" id="km" autocomplete="off"
+                        required>
+                </div>
+                <h>Potencia</h>
+                <div class="col-md-12">
+                    <img src="./images/vel.png" width="60px" alt="potencia">
+                    <input class="col-10" type="number" name="potencia" placeholder="Potencia" id="potencia"
+                        autocomplete="off" required>
+                </div>
+            </fieldset>
+            <div class="container">
+                <div class="d-block col-3 mx-auto">
+                    <button type="submit" class="submit" value="Guardar"><i class='bx bxs-save pl-1'>Guardar</i></button>
+                    <button type="button" class="oculto" value="Eliminar" id="btnDelete">Eliminar </button>
+                    <button type="button" class="oculto" value="Cancelar" id="btnCancelar">Cancelar </button>
+                    <input type="hidden" name="txtId">
+                </div>
+            </div>
+
+            <div id="spinner-container"></div>
+        </form>
+        <section id="frase" class="frase container-fluid mt-5 mb-5">
+
+            <div class="row">
+                <div class="col-12 p-5">
+                    <h3 class="text-center frase-texto">"Imagina el auto de tus sueños"
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+
+        <!--      FILTRO           -->
+        <section class="container mt-3 p-5 ">
+            <div class="row justify-content-center ">
+                <div class="col-md-10 rounded-pill">
+                    <h2 class="text-center">FILTROS</h2>
+
+                    <form>
+                        <div class="form-row">
+                            <div class="col pl-3">
+                                <label for="filtrar"> Filtrar por:</label>
+                                <select name="filtrar" id="filtro" class="form-control">
+                                    <option name="filtrar" value="Todos" selected>Todos</option>
+                                    <option name="filtrar" value="alquiler">Alquiler</option>
+                                    <option name="filtrar" value="venta">Venta</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="promedio">Promedio</label>
+                                <input type="text" name="promedio" id="promedio" class="form-control" placeholder="N/A" disabled>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+        <!--  SELECCION Y CHECKS     -->
+        <section class="container">
+            <div class="row justify-content-center ">
+                <div class="col-md-12">
+                    <h2>Seleccione los filtros</h2>
+                    <hr>
+
+                    <form>
+
+                        <div class="container">
+                            <div class="row custom-control custom-checkbox" id="contenedor-checkboxs">
+
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxtitulo" value="titulo" name="titulo"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxtitulo">Titulo</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxtransaccion" value="transaccion"
+                                        name="transaccion" checked>
+                                    <label class="custom-control-label" for="cboxtransaccion">Transaccion</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxdescripcion" value="descripcion"
+                                        name="descripcion" checked>
+                                    <label class="custom-control-label" for="cboxdescripcion">Descripcion</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxprecio" value="precio" name="precio"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxprecio">Precio</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxpuertas" value="puertas" name="puertas"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxpuertas">Puertas</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxkm" value="km" name="km"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxkm">Km's</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxpotencia" value="potencia"
+                                        name="potencia" checked>
+                                    <label class="custom-control-label" for="cboxpotencia">Potencia</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+        </section>
+
+
+        <!--     TABLA       -->
+        <div class="container mt-5">
+            <div class=" row justify-content-center">
+                <div id="divTabla" class="col-md-10 rounded-pill"></div>
+            </div>
+        </div>
+        <br>
+    </main>
+    <footer id="nosotros">
+        <nav>
+            <a href="#">Nosotros</a>
+            <a href="#">Anuncio</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <p>Todos los derechos reservados <date>2021</date>&copy;</p>
+    </footer>
+</body>
+
+</html>

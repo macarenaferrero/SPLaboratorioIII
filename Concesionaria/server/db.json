@@ -1,0 +1,84 @@
+{
+  "anuncios": [
+    {
+      "id": 5,
+      "titulo": "Corsa",
+      "transaccion": "alquiler",
+      "descripcion": "luminoso",
+      "precio": "2657",
+      "puertas": "4",
+      "km": "4",
+      "potencia": "2"
+    },
+    {
+      "id": 6,
+      "titulo": "Peugeot",
+      "transaccion": "venta",
+      "descripcion": "sin pintar",
+      "precio": "54",
+      "puertas": "4",
+      "km": "5",
+      "potencia": "6"
+    },
+    {
+      "id": 11,
+      "titulo": "Ford",
+      "transaccion": "alquiler",
+      "descripcion": "rural",
+      "precio": "9000",
+      "puertas": "5",
+      "km": "1",
+      "potencia": "4"
+    },
+    {
+      "id": 16,
+      "titulo": "Fiat",
+      "transaccion": "alquiler",
+      "descripcion": "a reparar",
+      "precio": "828",
+      "puertas": "3",
+      "km": "5",
+      "potencia": "1"
+    },
+    {
+      "id": 17,
+      "titulo": "Mustang",
+      "transaccion": "venta",
+      "descripcion": "Rojo",
+      "precio": "3804",
+      "puertas": "4",
+      "km": "4",
+      "potencia": "3"
+    },
+    {
+      "id": 18,
+      "titulo": "Fiat Uno",
+      "transaccion": "venta",
+      "descripcion": "sin papeles",
+      "precio": "153",
+      "puertas": "5",
+      "km": "4",
+      "potencia": "3"
+    },
+    {
+      "id": 1637529071152,
+      "titulo": "Duna",
+      "transaccion": "venta",
+      "descripcion": "Sin papeles",
+      "precio": "50000",
+      "puertas": "1",
+      "km": "0",
+      "potencia": "1"
+    },
+    {
+      "id": 1637546016158,
+      "titulo": "Citroen 3CV",
+      "transaccion": "alquiler",
+      "descripcion": "A estrenar",
+      "precio": "19.500",
+      "puertas": "0",
+      "km": "2",
+      "potencia": "0"
+    }
+  ]
+}

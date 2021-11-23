@@ -1,0 +1,145 @@
+body {
+  border: 2px solid rgb(90, 89, 89);
+  padding: 10px;
+  background-image: url("../images/fondo.jpg");
+}
+
+.itemsNav {
+  font-family: monospace;
+  padding: 2px 0px 2px;
+  font-size: 20px;
+}
+.navegacion {
+  background-color: rgba(219, 169, 61, 0.973);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 20px;
+  background-position: center;
+  image-rendering: optimizeSpeed;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+footer {
+  background-color: rgba(219, 169, 61, 0.973);
+  height: 50px;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  margin-right: 5px;
+}
+
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 119, 170);
+}
+
+#principal {
+  display: flex;
+  color: black;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.articulo {
+  border: 1px solid black;
+  width: 400px;
+  margin: 5px 20px;
+  height: 300px;
+}
+article {
+  width: 180px;
+  border: 1px solid black;
+  padding-left: 20px;
+  background-color: rgba(128, 128, 128, 0.438);
+}
+
+.texto {
+  font-size: 15px;
+  padding-right: 20px;
+  line-height: 30px;
+}
+
+.precio {
+  align-items: center;
+  font-size: 25px;
+  font-family: monospace;
+}
+
+.main {
+  font-size: large;
+  color: black;
+}
+
+/* NO VISITADO*/
+a:link {
+  text-decoration: slateblue;
+  color: white;
+  padding-top: 2px;
+}
+
+/* VISITADO*/
+a:visited {
+  text-decoration: none;
+  color: rgb(175, 211, 228);
+  margin-top: 10px;
+}
+
+/* ACTIVO*/
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+/* POSICIÓN MAUSE*/
+a:hover {
+  color: rgb(233, 183, 186, 0.8);
+  text-decoration: none;
+  transform: scale(1.5);
+  transition-duration: 400ms;
+}
+
+
+@media screen and (max-width: 500px) {
+  .navegacion {
+    flex-direction: column;
+    height: 160px;
+  }
+
+  .itemsNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+
+
+  .fieldsetItems {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1350px) {
+
+  #principal{
+    flex-direction: column;
+  }
+
+
+}
